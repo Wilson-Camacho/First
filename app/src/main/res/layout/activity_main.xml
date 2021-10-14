@@ -16,6 +16,7 @@
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:startIconDrawable="@drawable/coronita_foreground"
+        app:layout_constraintTop_toBottomOf="@id/imagencoronita"
         >
 
         <EditText
@@ -37,7 +38,6 @@
         android:id="@+id/til2"
         app:startIconDrawable="@drawable/no_entrar_foreground"
         app:passwordToggleEnabled="true"
-
         >
         <EditText
             android:layout_width="match_parent"
@@ -45,20 +45,23 @@
             android:hint="password"
             android:textAlignment="center"
             android:maxLines="1"
+
             >
 
         </EditText>
 
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/entrar"
         android:layout_width="0dp"
-        android:layout_height="44dp"
-        app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        android:text="Button"
+        android:layout_height="wrap_content"
+        android:text="otro"
         app:layout_constraintTop_toBottomOf="@id/til2"
+        app:layout_constraintStart_toEndOf="@id/button2"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        android:background="@color/cardview_light_background"
 
         />
 
@@ -76,6 +79,47 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.8"
 
+        />
+
+    <TextView
+        android:id="@+id/redireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/link"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="356dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/entrar"
+
+
+        />
+
+
+
+    <ImageView
+        android:id="@+id/imagencoronita"
+        android:layout_width="142dp"
+        android:layout_height="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/coronita_foreground"
+        tools:layout_editor_absoluteY="27dp"
+        app:layout_constraintBottom_toTopOf="@id/til1"
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="398dp"
+        app:layout_constraintStart_toEndOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/til2"
+        app:layout_constraintEnd_toStartOf="@id/entrar"
+        android:background="@color/cardview_light_background"
         />
 
 
