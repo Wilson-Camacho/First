@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:theme="@style/noActionsTheme">
 
     <ImageView
         android:layout_width="match_parent"
@@ -123,7 +124,7 @@
         style="@style/buttoninverse"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="onClick"
+        android:onClick="alMain"
         android:text="Button"
 
         android:textColor="@color/teal_200"

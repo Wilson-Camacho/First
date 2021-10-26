@@ -13,6 +13,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 public class LoginActivity extends AppCompatActivity{
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,25 +25,20 @@ public class LoginActivity extends AppCompatActivity{
                 .transition(DrawableTransitionOptions.withCrossFade(100))
                 .into(mGirl)
         ;
-
     }
 
-    public void vueltaLogin(View v){
-        Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
-        startActivity(intent);
-
-    }
     public void Abierto(View v){
         Intent intent = new Intent(LoginActivity.this, SignUP.class);
-        startActivity(intent);
-    }
-
-    public void onClick(View v){
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
+
+    public void alMain(View v){
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
 
 
 }

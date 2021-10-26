@@ -11,15 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.First" >
         <activity
-            android:name=".MainActivity"
+            android:name=".Splash"
             android:exported="true">
-
-        </activity>
-
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true"
-            android:theme="@style/Theme.First">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,9 +20,25 @@
         </activity>
 
         <activity
-            android:name=".SignUP"
+            android:name=".MainActivity"
             android:exported="true">
+        </activity>
 
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.First">
+        </activity>
+
+        <activity
+            android:name=".SignUP"
+            android:exported="true"
+            android:parentActivityName=".LoginActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SignUp"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
     </application>
 
