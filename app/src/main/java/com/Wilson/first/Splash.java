@@ -11,6 +11,11 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * @author Sheila
+ * Trabajando en mejora de la animación
+ *
+ */
 public class Splash extends AppCompatActivity {
 
     @Override
