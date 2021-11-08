@@ -8,9 +8,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="rosita">#FFB6DA7D</color>
-    <color name="rojito">#FF74C64F</color>
-    <color name="azul">#FF78C376</color>
+
     <color name="cajitas">#90FFFFFF</color>
+
+    <color name="acaba">#FF6FB98F</color>
+    <color name="centro">#FF2C7873</color>
+    <color name="empieza">#FF021C1E</color>
 
 </resources>

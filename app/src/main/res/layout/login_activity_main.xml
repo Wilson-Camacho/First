@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
+    android:background="@drawable/gradiant"
     android:theme="@style/noActionsTheme">
 
     <ImageView
@@ -17,6 +18,7 @@
         android:src="@drawable/girl"/>
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.5"
@@ -37,6 +39,7 @@
         app:startIconDrawable="@drawable/coronita_foreground">
 
         <EditText
+            android:id="@+id/usuario"
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:alpha="0.55"
@@ -57,6 +60,7 @@
         app:startIconDrawable="@drawable/no_entrar_foreground">
 
         <EditText
+            android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:alpha="0.55"
@@ -74,10 +78,10 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/button_custom"
         android:text="Entrar"
+        android:onClick="Abierto"
         app:layout_constraintEnd_toStartOf="@id/guideline2"
         app:layout_constraintStart_toEndOf="@id/button2"
         app:layout_constraintTop_toBottomOf="@id/til2"
-        android:onClick="Abierto"
         android:textColor="@color/black" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -131,6 +135,16 @@
         app:layout_constraintEnd_toStartOf="@id/entrar"
         app:layout_constraintStart_toEndOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@id/til2" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="464dp"
+        android:layout_marginEnd="104dp"
+
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
