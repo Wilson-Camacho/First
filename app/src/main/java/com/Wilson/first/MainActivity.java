@@ -1,12 +1,11 @@
 package com.Wilson.first;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.view.ContextMenu;
-import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +27,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_appbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.it1) {
+            final ConstraintLayout lay = findViewById(R.id.myMainActivityConstraint);
+            Snackbar snackbar = Snackbar
+                    .make(lay, "Infecting", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+
+        if (id == R.id.it2){
+            final ConstraintLayout lay = findViewById(R.id.myMainActivityConstraint);
+            Snackbar snackbar = Snackbar
+                    .make(lay, "Fixing", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
 
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -35,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_context, menu);
     }
-
 
     public boolean onContextItemSelected(MenuItem item) {
 

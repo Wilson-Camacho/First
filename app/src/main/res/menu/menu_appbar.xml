@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/it1"
+        android:title="Copy"
+        android:icon="@drawable/coronita_foreground"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/it2"
+        android:title="Settings"
+        android:icon="@drawable/settings"
+        app:showAsAction="ifRoom"
+    />
+    <item
+        android:id="@+id/it3"
+        android:title="About us"
+        android:icon="@drawable/coronita_foreground"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/it4"
+        android:title="Signout"
+        android:icon="@drawable/coronita_foreground"
+        app:showAsAction="ifRoom|withText"
+        />
+
+
+
+
+</menu>
