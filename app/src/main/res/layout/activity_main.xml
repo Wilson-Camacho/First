@@ -21,4 +21,21 @@
         android:textColor="@color/teal_700"
         />
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/refresh"
+        >
+        <WebView
+            android:id="@+id/sitioWeb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Hola"
+
+            />
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

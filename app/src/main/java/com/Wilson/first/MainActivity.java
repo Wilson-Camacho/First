@@ -2,6 +2,7 @@ package com.Wilson.first;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -9,12 +10,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
+    public SwipeRefreshLayout swipe;
+    public WebView sitioWeb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,20 @@ public class MainActivity extends AppCompatActivity {
         TextView presionado =  (TextView) findViewById(R.id.textPress);
         registerForContextMenu(presionado);
 
+
+        swipe = (SwipeRefreshLayout) findViewById(R.id.refresh);
+
+        swipe.setOnRefreshListener(nOnRefresListener);
+
+        sitioWeb = (WebView) findViewById(R.id.sitioWeb);
+
+        sitioWeb.getSettings().setBuiltInZoomControls(true);
+        sitioWeb.loadUrl("https://thiscatdoesnotexist.com/");
+
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -99,9 +116,17 @@ public class MainActivity extends AppCompatActivity {
                 return super.onContextItemSelected(item);
         }
 
-
-
-
-
     }
+    protected SwipeRefreshLayout.OnRefreshListener nOnRefresListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            Toast toast = Toast.makeText(MainActivity.this, "Recargando", Toast.LENGTH_LONG);
+
+
+            sitioWeb.reload();
+            swipe.setRefreshing(false);
+            toast.show();
+        }
+    };
+
 }
