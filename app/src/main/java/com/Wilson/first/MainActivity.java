@@ -1,9 +1,12 @@
 package com.Wilson.first;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -13,6 +16,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -41,6 +45,43 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void showAlertDialogButtonClicked(MainActivity mainActivity){
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+
+        builder.setTitle("Ventana");
+        builder.setMessage("¿Donde vas?");
+
+        builder.setCancelable(false);
+
+        builder.setPositiveButton("Signup", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(MainActivity.this, SignUP.class);
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("No hacer nada", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNeutralButton("Otro", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
+
+
 
 
     @Override
@@ -65,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
             Snackbar snackbar = Snackbar
                     .make(lay, "Fixing", Snackbar.LENGTH_LONG);
             snackbar.show();
+        }
+        if (id == R.id.it4) {
+            showAlertDialogButtonClicked(MainActivity.this);
         }
         return super.onOptionsItemSelected(item);
 
@@ -128,5 +172,8 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
         }
     };
+
+
+
 
 }

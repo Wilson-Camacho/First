@@ -20,8 +20,8 @@
     <!-- Esta barra es de prueba, para quitar la barra con el titulo.-->
     <style name="noActionsTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-        </style>
 
+        </style>
     <style name="Action.Theme" parent="Theme.MaterialComponents.DayNight">
         <item name="android:statusBarColor">@color/purple_200</item>
         <item name="android:textColor">@color/black</item>
