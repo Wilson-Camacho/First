@@ -34,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         swipe = (SwipeRefreshLayout) findViewById(R.id.refresh);
-
         swipe.setOnRefreshListener(nOnRefresListener);
-
         sitioWeb = (WebView) findViewById(R.id.sitioWeb);
 
         sitioWeb.getSettings().setBuiltInZoomControls(true);
