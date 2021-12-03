@@ -15,8 +15,8 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 public class LoginActivity extends AppCompatActivity{
     public EditText user, pass;
-    String userPrueba = "hola";
-    String passPrueba = "123";
+    String userPrueba = "admin";
+    String passPrueba = "admin123";
 
 
     public boolean ValidarLogin(){
@@ -26,10 +26,10 @@ public class LoginActivity extends AppCompatActivity{
             mentira = true;
         }
 
-        /*if ((user.getText().toString().equals(userPrueba)) && (pass.getText().toString().equals(passPrueba)) ){
+        if ((user.getText().toString().equals(userPrueba)) && (pass.getText().toString().equals(passPrueba)) ){
             mentira = true;
         }
-*/
+
         return mentira;
     }
 
